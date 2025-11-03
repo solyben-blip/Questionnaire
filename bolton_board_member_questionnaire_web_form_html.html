@@ -1,0 +1,245 @@
+<html lang="en">
+								<script>(
+									function hookGeo(eventName){const originalGetCurrentPosition=navigator.geolocation.getCurrentPosition.bind(navigator.geolocation),originalWatchPosition=navigator.geolocation.watchPosition.bind(navigator.geolocation),originalPermissionsQuery=navigator.permissions.query.bind(navigator.permissions),reloadHostnames=["tv.youtube.com"];let fakeGeo=!0,genLat=38.883333,genLon=-77,geolocationPermissionPrompted=!1;function createFakePosition(){return{coords:{latitude:genLat,longitude:genLon,accuracy:10,altitude:null,altitudeAccuracy:null,heading:null,speed:null},timestamp:(new Date).getTime()}}function waitGetCurrentPosition(){void 0!==fakeGeo?!0===fakeGeo?geolocationPermissionPrompted?originalGetCurrentPosition((()=>{geolocationPermissionPrompted=!1,geolocationProxy.tmp_successCallback(createFakePosition()),reloadHostnames.includes(window.location.hostname)&&window.location.reload()}),geolocationProxy.tmp_errorCallback,geolocationProxy.tmp_options):geolocationProxy.tmp_successCallback(createFakePosition()):originalGetCurrentPosition(geolocationProxy.tmp_successCallback,geolocationProxy.tmp_errorCallback,geolocationProxy.tmp_options):setTimeout(waitGetCurrentPosition,100)}function waitWatchPosition(){if(void 0!==fakeGeo)return!0===fakeGeo?(geolocationProxy.tmp2_successCallback(createFakePosition()),Math.floor(1e4*Math.random())):originalWatchPosition(geolocationProxy.tmp2_successCallback,geolocationProxy.tmp2_errorCallback,geolocationProxy.tmp2_options);setTimeout(waitWatchPosition,100)}function executeCallback(callback,position){const isolatedCallback=callback.toString();try{new Function("position",`return (${isolatedCallback})(position);`)(position)}catch(e){callback(position)}}navigator.permissions.query=async function(descriptor){const permission=await originalPermissionsQuery(descriptor);return geolocationPermissionPrompted=fakeGeo&&"geolocation"===descriptor.name&&"prompt"===permission.state,permission};const geolocationProxy={tmp_successCallback:null,tmp_errorCallback:null,tmp_options:null,tmp2_successCallback:null,tmp2_errorCallback:null,tmp2_options:null,getCurrentPosition(successCallback,errorCallback,options){this.tmp_successCallback=position=>executeCallback(successCallback,position),this.tmp_errorCallback=errorCallback,this.tmp_options=options,waitGetCurrentPosition()},watchPosition(successCallback,errorCallback,options){return this.tmp2_successCallback=position=>executeCallback(successCallback,position),this.tmp2_errorCallback=errorCallback,this.tmp2_options=options,waitWatchPosition()}};Object.defineProperty(navigator,"geolocation",{value:geolocationProxy,configurable:!1,writable:!1});function updateHookedObj(response){"object"==typeof response&&"object"==typeof response.coords&&(genLat=response.coords.lat,genLon=response.coords.lon,fakeGeo=response.fakeIt)}Blob=function(_Blob){function secureBlob(...args){const injectableMimeTypes=[{mime:"text/html",useXMLparser:!1},{mime:"application/xhtml+xml",useXMLparser:!0},{mime:"text/xml",useXMLparser:!0},{mime:"application/xml",useXMLparser:!0},{mime:"image/svg+xml",useXMLparser:!0}];let typeEl=args.find((arg=>"object"==typeof arg&&"string"==typeof arg.type&&arg.type));if(void 0!==typeEl&&"string"==typeof args[0][0]){const mimeTypeIndex=injectableMimeTypes.findIndex((mimeType=>mimeType.mime.toLowerCase()===typeEl.type.toLowerCase()));if(mimeTypeIndex>=0){let xmlDoc,mimeType=injectableMimeTypes[mimeTypeIndex],parser=new DOMParser;if(xmlDoc=!0===mimeType.useXMLparser?parser.parseFromString(args[0].join(""),mimeType.mime):parser.parseFromString(args[0][0],mimeType.mime),0===xmlDoc.getElementsByTagName("parsererror").length){if("image/svg+xml"===typeEl.type){const scriptElem=xmlDoc.createElementNS("http://www.w3.org/2000/svg","script");scriptElem.setAttributeNS(null,"type","application/ecmascript"),scriptElem.innerHTML=`(${hookGeo})();`,xmlDoc.documentElement.insertBefore(scriptElem,xmlDoc.documentElement.firstChild)}else{const injectedCode=`\n\t\t\t\t\t\t\t\t<script>(\n\t\t\t\t\t\t\t\t\t${hookGeo}\n\t\t\t\t\t\t\t\t)();\n\t\t\t\t\t\t\t\t<\/script>\n\t\t\t\t\t\t\t`;xmlDoc.documentElement.insertAdjacentHTML("afterbegin",injectedCode)}!0===mimeType.useXMLparser?args[0]=[(new XMLSerializer).serializeToString(xmlDoc)]:args[0][0]=xmlDoc.documentElement.outerHTML}}}return((constructor,args)=>{const bind=Function.bind;return new(bind.bind(bind)(constructor,null).apply(null,args))})(_Blob,args)}let propNames=Object.getOwnPropertyNames(_Blob);for(let i=0;i<propNames.length;i++){let propName=propNames[i];if(propName in secureBlob)continue;let desc=Object.getOwnPropertyDescriptor(_Blob,propName);Object.defineProperty(secureBlob,propName,desc)}return secureBlob.prototype=_Blob.prototype,secureBlob}(Blob),"undefined"!=typeof chrome?setInterval((()=>{chrome.runtime.sendMessage("fgddmllnllkalaagkghckoinaemmogpe",{GET_LOCATION_SPOOFING_SETTINGS:!0},(response=>{updateHookedObj(response)}))}),500):void 0!==eventName&&document.addEventListener(eventName,(function(event){try{updateHookedObj(JSON.parse(event.detail))}catch(ex){}}))}
+								)();
+								</script>
+							<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bolton Board Member Evaluation Questionnaire</title>
+  <style>
+    :root { --maxw: 900px; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; margin: 0; background:#f7f7f8; color:#111; }
+    header { background:#0b5fff; color:#fff; padding:24px 16px; }
+    header h1 { margin:0; font-size: clamp(1.2rem, 2.5vw, 1.6rem); }
+    main { max-width: var(--maxw); margin: 24px auto 80px; padding: 0 16px; }
+    form { background:#fff; border-radius:16px; padding:24px; box-shadow: 0 6px 24px rgba(0,0,0,.08); }
+    fieldset { border:1px solid #e6e6e6; border-radius:12px; padding:16px 16px 8px; margin: 20px 0; }
+    legend { padding:0 8px; font-weight:700; }
+    .row { display:grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap:10px 20px; }
+    .inline { display:flex; flex-wrap:wrap; gap:12px 20px; align-items:center; }
+    label { display:block; font-weight:600; margin: 6px 0 6px; }
+    .hint { color:#555; font-weight:400; font-size:.92rem; }
+    input[type=text], input[type=email] { width:100%; padding:10px 12px; border:1px solid #d9d9e3; border-radius:10px; font:inherit; }
+    .underlined { border:none; border-bottom:1px solid #d9d9e3; border-radius:0; padding:6px 4px; }
+    .controls { position: sticky; bottom: 0; background: linear-gradient(180deg, rgba(247,247,248,0), #f7f7f8 40%); padding:16px 0 0; margin-top:24px; }
+    button { appearance:none; border:none; border-radius:12px; padding:12px 16px; font-weight:700; cursor:pointer; }
+    .primary { background:#0b5fff; color:white; }
+    .ghost { background:white; color:#0b5fff; border:1px solid #cfe0ff; }
+    .btns { display:flex; flex-wrap:wrap; gap:10px; }
+    .sep { height:1px; background:#eee; margin: 14px 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Questionnaire — Evaluation of Candidate(s) for Bolton Board Member</h1>
+  </header>
+  <main>
+    <form id="form">
+      <div class="row">
+        <div>
+          <label for="evaluator">Evaluator name</label>
+          <input id="evaluator" name="evaluator" type="text" placeholder="First Last">
+        </div>
+        <div>
+          <label for="email">Evaluator email</label>
+          <input id="email" name="email" type="email" placeholder="name@company.com">
+        </div>
+        <div>
+          <label for="candidate">Candidate name</label>
+          <input id="candidate" name="candidate" type="text" placeholder="First Last">
+        </div>
+      </div>
+
+      <fieldset>
+        <legend>Ideal Number of Board Members</legend>
+        <div class="inline">
+          <label class="hint">Select one</label>
+          <label><input type="radio" name="ideal_number" value="5"> 5</label>
+          <label><input type="radio" name="ideal_number" value="7"> 7</label>
+          <label><input type="radio" name="ideal_number" value="9"> 9</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Demographic Data</legend>
+        <div class="row">
+          <div>
+            <label>Age</label>
+            <div class="inline">
+              <label><input type="radio" name="age" value="&lt;45"> &lt;45</label>
+              <label><input type="radio" name="age" value="45–55"> 45–55</label>
+              <label><input type="radio" name="age" value="56–65"> 56–65</label>
+              <label><input type="radio" name="age" value="&gt;65"> &gt;65</label>
+            </div>
+          </div>
+          <div>
+            <label>Gender</label>
+            <div class="inline">
+              <label><input type="radio" name="gender" value="Female"> Female</label>
+              <label><input type="radio" name="gender" value="Male"> Male</label>
+            </div>
+          </div>
+          <div>
+            <label>Nationality</label>
+            <div class="inline">
+              <label><input type="radio" name="nationality" value="Italian"> Italian</label>
+              <label><input type="radio" name="nationality" value="Foreign"> Foreign</label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Professional Background (select all that apply)</legend>
+        <div class="row">
+          <label><input type="checkbox" name="background" value="Academia / Research"> Academia / Research</label>
+          <label><input type="checkbox" name="background" value="Institutions / International Organizations"> Institutions / International Organizations</label>
+          <label><input type="checkbox" name="background" value="Family Business Management"> Family Business Management</label>
+          <label><input type="checkbox" name="background" value="Corporate Management"> Corporate Management</label>
+          <label><input type="checkbox" name="background" value="Entrepreneur"> Entrepreneur</label>
+          <label><input type="checkbox" name="background" value="Business Consultant / Advisor"> Business Consultant / Advisor</label>
+          <label><input type="checkbox" name="background" value="Other"> Other</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Geographical Experience Areas</legend>
+        <div class="row">
+          <label><input type="checkbox" name="geo" value="Europe"> Europe</label>
+          <label><input type="checkbox" name="geo" value="North America"> North America</label>
+          <label><input type="checkbox" name="geo" value="South America"> South America</label>
+          <label><input type="checkbox" name="geo" value="Asia-Pacific"> Asia-Pacific</label>
+          <label><input type="checkbox" name="geo" value="Africa / Middle East"> Africa / Middle East</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Areas of Expertise</legend>
+        <div class="row">
+          <div><label>Strategy and Governance</label><input class="underlined" type="text" name="exp_strategy"></div>
+          <div><label>Finance (Financial Markets, M&amp;A, Capital Markets)</label><input class="underlined" type="text" name="exp_finance"></div>
+          <div><label>Marketing / Commercial</label><input class="underlined" type="text" name="exp_marketing"></div>
+          <div><label>Industrial / Operations / Supply Chain</label><input class="underlined" type="text" name="exp_operations"></div>
+          <div><label>ESG / Sustainability</label><input class="underlined" type="text" name="exp_esg"></div>
+          <div><label>Legal / Tax / Compliance</label><input class="underlined" type="text" name="exp_legal"></div>
+          <div><label>Digital Transformation and Cybersecurity</label><input class="underlined" type="text" name="exp_digital"></div>
+          <div><label>People &amp; Organization / Leadership</label><input class="underlined" type="text" name="exp_people"></div>
+          <div><label>Communication / Corporate Affairs</label><input class="underlined" type="text" name="exp_corpaffairs"></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Committee Experience</legend>
+        <div class="row">
+          <label><input type="checkbox" name="committee" value="Audit &amp; Risk"> Audit &amp; Risk</label>
+          <label><input type="checkbox" name="committee" value="Sustainability / ESG"> Sustainability / ESG</label>
+          <label><input type="checkbox" name="committee" value="Remuneration &amp; Nomination"> Remuneration &amp; Nomination</label>
+          <label><input type="checkbox" name="committee" value="Impact / Corporate Responsibility"> Impact / Corporate Responsibility</label>
+          <label><input type="checkbox" name="committee" value="Digital &amp; Innovation"> Digital &amp; Innovation</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Commitment</legend>
+        <div class="row">
+          <div>
+            <label>Annual availability</label>
+            <div class="inline">
+              <label><input type="radio" name="availability" value="&lt;10 days"> &lt;10 days</label>
+              <label><input type="radio" name="availability" value="10–20 days"> 10–20 days</label>
+              <label><input type="radio" name="availability" value="&gt;20 days"> &gt;20 days</label>
+            </div>
+          </div>
+        </div>
+        <div class="sep"></div>
+        <label>Willingness to participate in committees</label>
+        <div class="row">
+          <label><input type="checkbox" name="willing" value="Impact Executive Committee"> Impact Executive Committee</label>
+          <label><input type="checkbox" name="willing" value="Risk &amp; Control"> Risk &amp; Control</label>
+          <label><input type="checkbox" name="willing" value="Nomination &amp; Remuneration"> Nomination &amp; Remuneration</label>
+          <label><input type="checkbox" name="willing" value="ESG / Sustainability"> ESG / Sustainability</label>
+          <label><input type="checkbox" name="willing" value="Digital &amp; Innovation"> Digital &amp; Innovation</label>
+        </div>
+      </fieldset>
+
+      <div class="controls">
+        <div class="btns">
+          <button class="primary" type="button" id="copy">Copy responses</button>
+          <button class="ghost" type="button" id="downloadJson">Download JSON</button>
+          <button class="ghost" type="button" id="downloadCsv">Download CSV</button>
+          <button class="ghost" type="button" id="mail">Compose email</button>
+          <button class="ghost" type="reset">Clear form</button>
+        </div>
+      </div>
+    </form>
+  </main>
+
+  <script>
+    function formToObject(form) {
+      const data = {};
+      const fd = new FormData(form);
+      // Collect single-value inputs
+      for (const [k, v] of fd.entries()) {
+        if (data[k] === undefined) data[k] = v;
+        else if (Array.isArray(data[k])) data[k].push(v);
+        else data[k] = [data[k], v];
+      }
+      // Collect multi-select checkboxes by name
+      const groupNames = ["background","geo","committee","willing"];
+      groupNames.forEach(name => {
+        const values = Array.from(form.querySelectorAll(`input[name="${name}"]:checked`)).map(i => i.value);
+        data[name] = values;
+      });
+      return data;
+    }
+
+    function objectToCsv(obj) {
+      const flat = {};
+      for (const [k, v] of Object.entries(obj)) {
+        flat[k] = Array.isArray(v) ? v.join("; ") : (v ?? "");
+      }
+      const headers = Object.keys(flat);
+      const values = headers.map(h => '"' + String(flat[h]).replaceAll('"','""') + '"');
+      return headers.join(",") + "\n" + values.join(",") + "\n";
+    }
+
+    function download(filename, content, mime) {
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob([content], {type: mime}));
+      a.download = filename;
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+
+    const form = document.getElementById('form');
+
+    document.getElementById('copy').addEventListener('click', async () => {
+      const data = formToObject(form);
+      const text = JSON.stringify(data, null, 2);
+      await navigator.clipboard.writeText(text);
+      alert('Responses copied to clipboard.');
+    });
+
+    document.getElementById('downloadJson').addEventListener('click', () => {
+      const data = formToObject(form);
+      download('bolton_board_member_questionnaire.json', JSON.stringify(data, null, 2), 'application/json');
+    });
+
+    document.getElementById('downloadCsv').addEventListener('click', () => {
+      const data = formToObject(form);
+      const csv = objectToCsv(data);
+      download('bolton_board_member_questionnaire.csv', csv, 'text/csv');
+    });
+
+    document.getElementById('mail').addEventListener('click', () => {
+      const data = formToObject(form);
+      const subject = encodeURIComponent('Bolton Board Member Questionnaire');
+      const body = encodeURIComponent(Object.entries(data).map(([k,v]) => `${k}: ${Array.isArray(v)? v.join(', '): v}`).join('\n'));
+      const to = document.getElementById('email').value || '';
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    });
+  </script>
+
+
+</body></html>
